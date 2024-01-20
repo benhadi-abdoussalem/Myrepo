@@ -1,5 +1,5 @@
 let tree = {
-    height: 8,
+    height: 6,
     color: 'green',
     grow() {
       this.height += 2;
