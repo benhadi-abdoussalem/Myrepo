@@ -39,3 +39,17 @@ let user = {
   [prop]: 'Jack',
   [`user_${id}`]: `${mobile}`
 };
+/*Computed Property Names
+With ES6, you can now use computed property names. Using the square bracket notation [], we can use an expression for a property name, including concatenating strings. This can be useful in cases where we want to create certain objects based on user data (e.g. id, email, and so on).
+
+Here are three examples:
+
+Example 1:*/
+let prop = 'name';
+let id = '1234';
+let mobile = '08923';
+
+let user = {
+  [prop]: 'Jack',
+  [`user_${id}`]: `${mobile}`
+};
