@@ -111,3 +111,68 @@ var config = {
 };
 console.log(config.mobileSize);
 /*It is very useful when you need to create custom objects based on some variables.*/
+/*Object.assign() in ES6
+ES6 adds a new Object method assign() that allows us to combine multiple sources into one target to create a single new object.
+Object.assign() is also useful for creating a duplicate of an existing object.
+
+Let's look at the following example to see how to combine objects:*/
+let person = {
+  name: 'Jack',
+  age: 18,
+  sex: 'male'
+};
+let student = {
+  name: 'Bob',
+  age: 20,
+  xp: '2'
+};
+let newStudent = Object.assign({}, person, student);
+/*Here we used Object.assign() where the first parameter is the target object you want to apply new properties to.
+Every parameter after the first will be used as sources for the target. There are no limitations on the number of source parameters. However, order is important because properties in the second parameter will be overridden by properties of the same name in third parameter, and so on.
+
+In the example above, we used a new object {} as the target and used two objects as sources.
+
+Try changing the order of second and third parameters to see what happens to the result.
+
+Now, let's see how we can use assign() to create a duplicate object without creating a reference (mutating) to the base object.
+In the following example, assignment was used to try to generate a new object. However, using = creates a reference to the base object. Because of this reference, changes intended for a new object mutate the original object:*/
+let person = {
+  name: 'Jack',
+  age: 18
+};
+
+let newPerson = person; //  newPerson references person
+newPerson.name = 'Bob'; 
+
+console.log(person.name); // Bob
+console.log(newPerson.name); // Bob
+/*To avoid this (mutations), use Object.assign() to create a new object.
+
+For example:*/
+let person = {
+  name: 'Jack',
+  age: 18
+};
+
+let newPerson = Object.assign({}, person); 
+newPerson.name = 'Bob';
+
+console.log(person.name); // Jack
+console.log(newPerson.name); // Bob
+/*Finally, you can assign a value to an object property in the Object.assign() statement.
+
+For example:*/
+let person = {
+  name: 'Jack',
+  age: 18
+};
+
+let newPerson = Object.assign({}, person, {name: 'Bob'});
+/*Run the code and see how it works!*/
+const obj1 = {
+  a: 0,
+  b: 2,
+  c: 4
+  };
+  const obj2 = Object.assign({c: 5, d: 6}, obj1);
+  console.log(obj2.c, obj2.d);
