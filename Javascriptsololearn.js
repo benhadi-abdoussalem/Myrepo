@@ -176,7 +176,8 @@ const obj1 = {
   };
   const obj2 = Object.assign({c: 5, d: 6}, obj1);
   console.log(obj2.c, obj2.d);
-  Array Destructuring in ES6
+
+/*Array Destructuring in ES6*/
 
 /*The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
 ES6 has added a shorthand syntax for destructuring an array.
@@ -203,7 +204,6 @@ let [one, , two] = a();
 /*Notice that we left the second argument's place empty.
 
 The destructuring syntax also simplifies assignment and swapping values:
-
 */
 let a, b, c = 4, d = 8;
 [a, b = 6] = [2]; // a = 2, b = 6
