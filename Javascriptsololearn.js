@@ -210,3 +210,38 @@ let a, b, c = 4, d = 8;
 
 [c, d] = [d, c]; // c = 8, d = 4
 /*Run the code and see how it works!*/
+/*Object Destructuring in ES6
+Similar to Array destructuring, Object destructuring unpacks properties into distinct variables.
+
+For example:*/
+let obj = {h:100, s: true};
+let {h, s} = obj;
+
+console.log(h); // 100
+console.log(s); // true
+/*We can assign without declaration, but there are some syntax requirements for that:*/
+let a, b;
+({a, b} = {a: 'Hello ', b: 'Jack'});
+
+console.log(a + b); // Hello Jack
+/*The () with a semicolon (;) at the end are mandatory when destructuring without a declaration. However, you can also do it as follows where the () are not required:*/
+let {a, b} = {a: 'Hello ', b: 'Jack'};
+console.log(a + b);
+/*You can also assign the object to new variable names.
+
+For example:*/
+var o = {h: 42, s: true};
+var {h: foo, s: bar} = o;
+
+//console.log(h); // Error
+console.log(foo); // 42
+/*Finally you can assign default values to variables, in case the value unpacked from the object is undefined.
+
+For example:*/
+var obj = {id: 42, name: "Jack"};
+
+let {id = 10, age = 20} = obj;
+
+console.log(id); // 42
+console.log(age); // 20
+/*Run the code and see how it works!*/
