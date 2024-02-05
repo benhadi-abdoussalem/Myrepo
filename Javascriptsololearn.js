@@ -433,3 +433,83 @@ const p2 = new Point(3, 8);
 
 console.log(Point.distance(p1, p2));
 /*As you can see, the static distance method is called directly using the class name, without an object.
+Class Methods in ES6
+You are making a program so that students are able to calculate their average of 3 exam scores.
+The given program takes the scores of 3 exams as input and declares the Exams class.
+Add a static method average() to class Exams, which will take the scores as parameters, and calculate and return the average score rounded to the nearest integer so that the code in main works correctly.
+
+Sample Input
+74
+80
+68
+
+Sample Output
+74
+
+Recall Math.round() function to round the number with the floating point to the nearest integer.
+*/
+function main() {
+  var exam1 = parseInt(readLine(), 10);
+  var exam2 = parseInt(readLine(), 10);
+  var exam3 = parseInt(readLine(), 10);
+  
+  console.log(Exams.average(exam1,exam2,exam3));
+  
+}
+class Exams{
+  constructor(x, y, z) {
+  this.x = exam1;
+  this.y = exam2;
+  this.z = exam3;
+}
+  static average(x, y, z) {
+  const averageexams = (x+y+z)/3;
+  return Math.round(averageexams) ;
+}
+}
+/*Inheritance in ES6
+The extends keyword is used in class declarations or class expressions to create a child of a class. The child inherits the properties and methods of the parent.
+*/
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(this.name + ' makes a noise.');
+  }
+}
+class Dog extends Animal {
+  speak() {
+    console.log(this.name + ' barks.');
+  }
+}
+
+let dog = new Dog('Rex');
+dog.speak();
+/*
+In the code above, the Dog class is a child of the Animal class, inheriting its properties and methods.
+
+If there is a constructor present in the subclass, it needs to first call super() before using this. Also, the super keyword is used to call parent's methods.
+
+For example, we can modify the program above to the following:
+*/
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(this.name + ' makes a noise.');
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    super.speak(); // Super
+    console.log(this.name + ' barks.');
+  }
+}
+
+let dog = new Dog('Rex');
+dog.speak();
+/*
+In the code above, the parent's speak() method is called using the super keyword.
