@@ -500,9 +500,7 @@ class Animal {
   speak() {
     console.log(this.name + ' makes a noise.');
   }
-}
-
-class Dog extends Animal {
+}class Dog extends Animal {
   speak() {
     super.speak(); // Super
     console.log(this.name + ' barks.');
