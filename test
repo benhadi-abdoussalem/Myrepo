@@ -1,9 +1,16 @@
-function longestString() {
-  let longest = "";
-  for (let i = 0; i < arguments.length; i++) {
-    if (arguments[i].length > longest.length) {
-      longest = arguments[i];
-    }
+class Animal {
+  constructor(name) {
+    this.name = name;
   }
-  return longest;
+  speak() {
+    console.log(this.name + ' makes a noise.');
+  }
+}class Dog extends Animal {
+  speak() {
+    super.speak(); // Super
+    console.log(this.name + ' barks.');
+  }
 }
+
+let dog = new Dog('Rex');
+dog.speak();
