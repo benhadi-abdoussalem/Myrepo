@@ -754,3 +754,11 @@ console.log(`2p = + ${math.sum(math.pi, math.pi)}`)
 Here we are exporting the sum function and the pi variable so we can use them in different files.
 ES6 supports modules officially, however, some browsers are not supporting modules natively yet. So, we should use bundlers (builders) such as Webpack or Browserify to run our code.
 */
+//Fill in the blanks to import the following from "util/calc.js":
+export const hit = (x, y, z) => {
+return x * y + z / 2;
+}
+export const degree = 50;
+
+import * as calc from "util/calc";
+calc.hit(1, 2, calc.degree);
