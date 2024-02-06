@@ -762,3 +762,52 @@ export const degree = 50;
 
 import * as calc from "util/calc";
 calc.hit(1, 2, calc.degree);
+
+/*Built-in Methods
+ES6 also introduced new built-in methods to make several tasks easier. Here we will cover the most common ones.
+
+Array Element Finding
+The legacy way to find the first element of an array by its value and a rule was the following:
+*/
+[4, 5, 1, 8, 2, 0].filter(function (x) {
+  return x > 3;
+})[0];
+/*The new syntax is cleaner and more robust:
+
+*/[4, 5, 1, 8, 2, 0].find(x => x > 3);
+/*
+You can also get the index of the item above by using the findIndex() method:
+
+*/
+[4, 5, 1, 8, 2, 0].findIndex(x => x > 3);
+/*
+Repeating Strings
+Before ES6 the following syntax was the correct way to repeat a string multiple times:
+*/
+console.log(Array(3 + 1).join("foo")); // foofoofoo
+/*
+With the new syntax, it becomes:
+
+*/
+console.log("foo".repeat(3)); // foofoofoo
+/*
+[h2]Searching Strings[/h2]
+Before ES6 we only used the indexOf() method to find the position of the text in the string. For example:
+
+*/
+"SoloLearn".indexOf("Solo") === 0; // true
+"SoloLearn".indexOf("Solo") === (4 - "Solo".length); // true
+"SoloLearn".indexOf("loLe") !== -1; // true
+"SoloLearn".indexOf("olo", 1) !== -1; // true
+"SoloLearn".indexOf("olo", 2) !== -1; // false
+/*
+ES6 has replaced this with a version that has cleaner and more simplified syntax:
+
+*/
+"SoloLearn".startsWith("Solo", 0); // true
+"SoloLearn".endsWith("Solo", 4); // true
+"SoloLearn".includes("loLe"); // true
+"SoloLearn".includes("olo", 1); // true
+"SoloLearn".includes("olo", 2); // false
+/*
+It is always a good practice to refactor your code with the new syntax to learn new things and make your code more understandable.
